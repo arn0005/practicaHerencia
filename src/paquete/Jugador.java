@@ -2,35 +2,37 @@ package paquete;
 
 public class Jugador extends Persona {
 
-    /*
-    altura, posicion(base,escolta,alero,ala-pivot,pivot),
-    numero partidos jugados(empieza en 0),comprobar si esta jugando,
-    
-    
-    
-     */
     private double altura; //en metros
-    private Posicion posicion;
+    private String posicion;
     private int partidosJugados;
     private boolean estaJugando;
 
-    public Jugador(double altura, Posicion posicion, String nombre, String direccion, String DNI, boolean sexo) {
+    public Jugador(double altura, String posicion, String nombre, String direccion, String DNI, boolean sexo) {
         super(nombre, direccion, DNI, sexo);
         if (altura > 1.65) {
             this.altura = altura;
         } else {
             this.altura = 1.70;
         }
-        if (posicion == Posicion.base) {
-            this.posicion = Posicion.base;
-        } else if (posicion == Posicion.alapivot) {
-            this.posicion = Posicion.alapivot;
-        } else if (posicion == Posicion.escolta) {
-            this.posicion = Posicion.escolta;
-        } else if (posicion == Posicion.pivot) {
-            this.posicion = Posicion.pivot;
-        } else {
-            this.posicion = Posicion.alero;
+        switch (posicion) {
+            case "base":
+                this.posicion = "base";
+                break;
+            case "pivot":
+                this.posicion = "pivot";
+                break;
+            case "alapivot":
+                this.posicion = "alapivot";
+                break;
+            case "escolta":
+                this.posicion = "escolta";
+                break;
+            case "alero":
+                this.posicion = "alero";
+                break;
+            default:
+                this.posicion = "alero";
+                break;
         }
         this.partidosJugados = 0;
         this.estaJugando = false;
@@ -63,5 +65,4 @@ public class Jugador extends Persona {
             return res + "\nAhora mismo no está jugando";
         }
     }
-
 }
