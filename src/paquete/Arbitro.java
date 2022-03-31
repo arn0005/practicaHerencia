@@ -7,12 +7,11 @@ public class Arbitro extends Persona {
 
     public Arbitro(double sueldo, String especialidad, String nombre, String direccion, String DNI, boolean sexo) {
         super(nombre, direccion, DNI, sexo);
-        this.sueldo = sueldo;
-
-        if (this.sueldo < 800 || this.sueldo > 1200) {
+        if (sueldo < 800 || sueldo > 1200) {
             this.sueldo = 914;
+        } else {
+            this.sueldo = sueldo;
         }
-
         switch (especialidad) {
             case "principal":
                 this.especialidad = "principal";
@@ -31,7 +30,7 @@ public class Arbitro extends Persona {
 
     @Override
     public String toString() {
-        return super.toString() + "\nEspecializado/a como " + this.especialidad + " que cobra " + this.sueldo +"€ por partido.";
+        return super.toString() + "\nEspecializado/a como " + this.especialidad + " que cobra " + this.sueldo + "€ por partido.";
     }
 
 }
