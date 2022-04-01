@@ -1,21 +1,27 @@
 package paquete;
 
-/**
- *
- * @author angel
- */
 public class principal {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        /*Persona personaAngel = new Persona("Angel", "Poeta Agustin", "26836851Z", true);
-        Jugador jugadorAngel = new Jugador(1.71, "", personaAngel.dameNombre(), personaAngel.dameDireccion(), personaAngel.dameDNI(), true);
-        System.out.println(jugadorAngel.toString());*/
+        Persona Angel = new Persona("Angel", "poeta agustin", "26836851Z", true);
+        // System.out.println(Angel);
 
-        Arbitro arbitro1 = new Arbitro(799, "principal", "Angel", "poeta", "26836851Z", true);
-        System.out.println(arbitro1);
+        Jugador j1 = new Jugador(1.60, "base", "Elena", "calle asd", "2683232D", false);
+
+        Arbitro a1 = new Arbitro(699, "auxiliar", "manu", "calle dfgh", "2382763", true);
+        Arbitro a2 = new Arbitro(1400, "oficial de mesa", "otro manu", "calle dfgh", "34255355", false);
+        //System.out.println(Manuel); 
+
+        Partido p1 = new Partido("12/06/2000", "Malaga");
+        //p1.aniadirArbitro(celia);
+
+        Equipo e1 = new Equipo("malga", 1923, 46.7, 4);
+        System.out.println(e1.toString());
+        p1.aniadirArbitro(a2);
+        p1.aniadirArbitro(a2);
+
+        p1.jugarpartido();
+
     }
 
 }

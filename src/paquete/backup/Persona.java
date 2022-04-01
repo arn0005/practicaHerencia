@@ -2,31 +2,31 @@ package paquete;
 
 public class Persona {
 
-    private String nombrePersona;
+    private String nombre;
     private String direccion;
     private String DNI;
     protected boolean sexo; // true = chico
 
     public Persona(String nombre, String direccion, String DNI, boolean sexo) {
-        this.nombrePersona = nombre;
+        this.nombre = nombre;
         this.direccion = direccion;
         this.DNI = DNI;
         this.sexo = sexo;
     }
 
     public void personaCopia(Persona copia) {
-        this.nombrePersona = copia.nombrePersona;
+        this.nombre = copia.nombre;
         this.direccion = copia.direccion;
         this.DNI = copia.DNI;
         this.sexo = copia.sexo;
     }
 
-    public String getNombrePersona() {
-        return nombrePersona;
+    public String dameNombre() {
+        return nombre;
     }
 
-    public void setNombrePersona(String nombrePersona) {
-        this.nombrePersona = nombrePersona;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String dameDireccion() {
@@ -55,7 +55,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        String res = this.nombrePersona + " - " + this.DNI;
+        String res = this.nombre + " - " + this.DNI;
         if (this.sexo == true) {
             return res + "\nEs un chico\n" + this.direccion;
         } else {

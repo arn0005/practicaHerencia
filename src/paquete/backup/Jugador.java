@@ -41,15 +41,15 @@ public class Jugador extends Persona {
     public void jugando() {
         if (estaJugando == true) {
             if (sexo == true) {
-                System.out.println("El jugador " + super.getNombrePersona() + " está jugando");
+                System.out.println("El jugador " + super.dameNombre() + " está jugando");
             } else {
-                System.out.println("La jugadora " + super.getNombrePersona() + " está jugando");
+                System.out.println("La jugadora " + super.dameNombre() + " está jugando");
             }
         } else {
             if (sexo == true) {
-                System.out.println("El jugador " + super.getNombrePersona() + " no está jugando");
+                System.out.println("El jugador " + super.dameNombre() + " no está jugando");
             } else {
-                System.out.println("La jugadora " + super.getNombrePersona() + " no está jugando");
+                System.out.println("La jugadora " + super.dameNombre() + " no está jugando");
             }
         }
     }
